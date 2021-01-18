@@ -1,63 +1,33 @@
-# 基于github action的京东自动化签到
+## 请仔细阅读[WIKI](https://github.com/EvineDeng/jd-base/wiki)和各文件注释，90%的问题都能找到答案
 
-## 介绍
+## 如有帮助到你，请点亮Star
 
-> 使用NobyDa “京东多合一签到脚本”为基础，移植到github actions自动化执行。
+## 如有二次使用，请注明来源
 
+本脚本是[https://github.com/LXK9301/jd_scripts](https://github.com/LXK9301/jd_scripts)的shell套壳工具，适用于以下系统：
 
-## 触发方式
-* 点亮`Star`
-* 凌晨4点定时执行
-*  自定义：.github/workflows/work.yaml 编辑
+- ArmBian/Debian/Ubuntu/OpenMediaVault/CentOS/Fedora/RHEL等Linux系统
 
-## 注意问题
+- OpenWRT
 
-> **问题一：[项目Fork后定时任务没有执行](https://github.com/ZHDeveloper/JD_Sign_Action/issues/3)**
-> 
->>1、建议修改README.md提交，以触发定时任务。
->>
->>2、定时任务的时间是UTC时间，跟中国时间有8小时的时差。
-> 
->  **问题二：京东Cookie的有效期**
-> 
-> >就我自己项目中的使用情况而言，一个月有效期。
+- Android
 
+- MacOS
 
+- Docker
 
-## 使用用法
-* 点击右上角 `Fork` 项目；
-* `Settings` -> `Secrets` 中添加京东Cookie、Server酱SCKEY；
-	- `JD_COOKIE`：账号1Cookie
-	- `JD_DUAL_COOKIE`：账号2Cookie(选填)
-	- `PUSH_KEY`：Server酱SCKEY
-* 点击`Star`，任务会自动执行，运行进度和结果可以在`Actions`页面查看；
-* 当任务运行完成时，会将运行结果和错误信息打包到`Artifacts`，可自行下载查看；
-* 如果配置了Server酱，运行结果会推送到微信；
+## 说明
 
-## 获取京东cookie
+1. 宠汪汪赛跑助力先让用户提供的各个账号之间相互助力，助力完成你提供的所有账号以后，再给我和lxk0301大佬助力，每个账号助力后可得30g狗粮。
 
-* 使用项目中的Chrome插件：`JDCookie`；
-* Chrome中拓展程序开启`开发者模式`；
-* 点击`加载已解压的拓展程序`，选择`JDCookie`目录；
-* 登录[领京豆](https://bean.m.jd.com/)；
-* 点击`JDCookie`即可拷贝京东cookie；
+2. 将部分临时活动修改为了我的邀请码，已取得lxk0301大佬的同意。
 
-## 获取Server酱SCKEY
+## 更新日志
 
-* github 授权登录[Server酱](http://sc.ftqq.com/3.version)官网；
-* 菜单栏`微信推送`扫描绑定微信；
-* 菜单栏`发送消息`拷贝SCKEY；
+> 只记录大的更新，小修小改不记录。
 
+2021-01-15，每天定时任务中git_pull.sh只执行2次；每天12:00前运行git_pull.sh时随机生成当天下午执行git_pull.sh的任务时间，生成的时间范围：13:00-20:59；每天12:00后运行git_pull.sh时随机生成第二天上行执行git_pull.sh的任务时间，生成的时间范围：7:00-11:59；不影响手动执行，手动执行会刷新下一次git_pull.sh的执行时间。如果本机上安装了pm2，则挂机程序以pm2启动，否则以nohup启动。
 
+## Star趋势
 
-## 效果截图
-
-![WechatIMG3](./images/WechatIMG3.jpeg)
-
-![WechatIMG4](./images/WechatIMG4.jpeg)
-
-
-## 参考项目
-* [NobyDa/Script/JD-DailyBonus](https://github.com/NobyDa/Script/blob/master/JD-DailyBonus/JD_DailyBonus.js)
-* [ruicky/jd-sign-bot](https://github.com/ruicky/jd_sign_bot)
-* [jerrykuku/luci-app-jd-dailybonus](https://github.com/jerrykuku/luci-app-jd-dailybonus)
+[![Stargazers over time](https://starchart.cc/EvineDeng/jd-base.svg)](https://starchart.cc/EvineDeng/jd-base)
